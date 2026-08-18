@@ -13,6 +13,6 @@ h1 {
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.a-btn:hover {
+.btn:hover {
   transform: scale(1.05);
 }
