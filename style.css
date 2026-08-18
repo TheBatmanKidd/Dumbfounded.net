@@ -16,3 +16,7 @@ h1 {
 .btn:hover {
   transform: scale(1.05);
 }
+
+.btn:active {
+  transform: scale(1.1);
+}
