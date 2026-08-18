@@ -17,6 +17,28 @@ a {
   font-family: 'Comic Sans MS', 'Comic Sans', cursive;
 }
 
+.static-shine {
+  font-size: 5rem;
+  font-weight: 900;
+  font-family: sans-serif;
+  
+  background: linear-gradient(
+    to bottom,
+    #777777 0%,
+    #cccccc 40%,
+    #ffffff 50%,
+    #333333 55%,
+    #888888 100%
+  );
+  
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.3));
+}
+
+
 .btn {
   background: linear-gradient(to top, blue, skyblue);
   color: white;
