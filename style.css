@@ -9,6 +9,7 @@ h1 {
   width: 175px;
   height: 75px;
   font-size: 36px;
+  font-family: 'Consolas', sans-serif;
   border-radius: 32px;
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
