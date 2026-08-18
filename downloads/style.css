@@ -1,0 +1,25 @@
+h1 {
+  text-align: center;
+  font-size: 84px;
+  font-family: 'Ultra', sans-serif;
+  color: red;
+}
+
+.btn {
+  background: linear-gradient(to top, blue, skyblue);
+  color: white;
+  height: 75px;
+  font-size: 36px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  border-radius: 32px;
+  padding: 0 36px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
