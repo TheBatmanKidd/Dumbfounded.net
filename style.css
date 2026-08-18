@@ -4,3 +4,9 @@ h1 {
   font-family: 'Ultra', sans-serif;
   color: red;
 }
+
+.btn {
+  width: 250px;
+  height: 125px;
+  font-size: 18px;
+}
