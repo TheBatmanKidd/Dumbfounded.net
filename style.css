@@ -6,8 +6,8 @@ h1 {
 }
 
 .btn {
-  background: linear-gradient(to bottom, lightgreen, green)
-  color: blue;
+  background: linear-gradient(to top, darkblue, skyblue)
+  color: white;
   height: 75px;
   font-size: 36px;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
