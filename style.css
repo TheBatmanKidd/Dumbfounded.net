@@ -10,4 +10,9 @@ h1 {
   height: 125px;
   font-size: 18px;
   border-radius: 8px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.a-btn:hover {
+  transform: scale(1.05);
 }
