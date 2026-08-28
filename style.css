@@ -51,7 +51,7 @@ h1:hover {
 
 h2 {
   text-align: center;
-  font-size: 34px;
+  font-size: 36px;
   font-family: 'Comic Sans MS', 'Comic Sans', cursive;
   color: blue;
   display: block;
@@ -59,7 +59,7 @@ h2 {
 }
 
 h2:hover {
-  transform: scale(1.05);
+  transform: scale(0.90);
 }
 
 .btn {
