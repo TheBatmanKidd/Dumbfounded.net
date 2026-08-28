@@ -59,7 +59,7 @@ h2 {
 }
 
 h2:hover {
-  transform: scale(0.90);
+  transform: scale(1.00);
 }
 
 .btn {
