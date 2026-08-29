@@ -20,6 +20,15 @@
   transform: scale(1.015);
 }
 
+a {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  transition: transform 0.2s ease;
+}
+
+a:hover {
+  transform: scale(1.05);
+}
+
 .nav_menu {
   position: fixed;
   top: 0;
