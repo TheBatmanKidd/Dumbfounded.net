@@ -1,4 +1,4 @@
-.aero-window {
+.window {
   margin-top: -200px;
   min-width: 85vw;
   background: linear-gradient(
@@ -16,7 +16,7 @@
   transition: transform 0.2s ease;
 }
 
-.aero-window:hover {
+.window:hover {
   transform: scale(1.015);
 }
 
