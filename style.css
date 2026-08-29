@@ -3,8 +3,8 @@
   min-width: 85vw;
   background: linear-gradient(
     to bottom,
-    rgba(050, 050, 255, 0.6) 0%,
-    rgba(050, 050, 255, 0.2) 100%
+    rgba(050, 255, 050, 0.6) 0%,
+    rgba(050, 255, 050, 0.2) 100%
   );
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
