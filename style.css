@@ -22,11 +22,7 @@
 
 a {
   font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-  transition: transform 0.2s ease;
-}
-
-a:hover {
-  transform: scale(1.05);
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .nav_menu {
