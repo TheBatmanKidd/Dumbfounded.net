@@ -1,7 +1,7 @@
 .aero-window {
   margin-top: -200px;
   min-width: 85vw;
-  min-height: 50vw;
+  min-height: 20vw;
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0.6) 0%,
