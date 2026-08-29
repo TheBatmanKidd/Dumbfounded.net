@@ -68,7 +68,7 @@ h1 {
 }
 
 h1:hover {
-  transform: scale(1.01);
+  transform: scale(1.02);
 }
 
 h2 {
@@ -82,7 +82,7 @@ h2 {
 }
 
 h2:hover {
-  transform: scale(1.01);
+  transform: scale(1.012;
 }
 
 .btn {
