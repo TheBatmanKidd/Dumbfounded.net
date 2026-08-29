@@ -74,7 +74,7 @@ h1:hover {
 h2 {
   text-align: center;
   font-size: 36px;
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-family: 'Barlow Condensed', sans-serif;
   color: blue;
   display: block;
   transition: transform 0.2s ease;
