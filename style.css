@@ -50,7 +50,7 @@ a {
 }
 
 .background {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   background: linear-gradient(
@@ -65,8 +65,15 @@ a {
   justify-content: center;
   align-items: center;
   padding: 20px;
+
+  animation: lockBackground 0s linear 0.8s forwards;
 }
 
+@keyframes lockBackground {
+  to {
+    position: fixed;
+  }
+}
 
 h1 {
   text-align: center;
