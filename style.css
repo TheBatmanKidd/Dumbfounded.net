@@ -21,6 +21,9 @@
 }
 
 .background {
+  position: fixed;
+  top: 0;
+  left: 0;
   background: linear-gradient(
     to bottom,
     #4facfe 0%,
