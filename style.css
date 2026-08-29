@@ -1,18 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
 .window {
-  margin-top: -200px;
-  min-width: 85vw;
+  width: min(85vw, 1000px);
+  min-width: 0;
+  margin: 100px auto 20px;
   background: linear-gradient(
     to bottom,
-    rgba(050, 050, 255, 0.6) 0%,
-    rgba(050, 050, 255, 0.2) 100%
+    rgba(50, 50, 255, 0.6) 0%,
+    rgba(50, 50, 255, 0.2) 100%
   );
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 32px;
   border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 10px 25px rgba(0, 0, 0, 0.3);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 10px 25px rgba(0, 0, 0, 0.3);
   padding: 15px;
-  color: #00FF00;
+  color: #00ff00;
   transition: transform 0.2s ease;
 }
 
@@ -25,6 +41,7 @@
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -36,7 +53,7 @@
 }
 
 a {
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
   color: black;
 }
@@ -48,40 +65,35 @@ a {
   width: 100%;
   padding: 15px;
   text-align: center;
+  z-index: 100;
 }
 
 .background {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(050, 255, 050, 0.6) 0%,
-    rgba(050, 255, 050, 0.2) 100%
+    rgba(50, 255, 50, 0.6) 0%,
+    rgba(50, 255, 50, 0.2) 100%
   );
-  min-height: 100vh;
-  min-width: 100vw;
+  min-height: 100dvh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-
-}
-
-@keyframes lockBackground {
-  to {
-    position: fixed;
-  }
+  overflow-y: auto;
 }
 
 h1 {
   text-align: center;
-  font-size: 92px;
-  font-family: 'Ultra', sans-serif;
+  font-size: clamp(42px, 8vw, 92px);
+  font-family: "Ultra", sans-serif;
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
   color: red;
   display: block;
   transition: transform 0.2s ease;
+  overflow-wrap: break-word;
 }
 
 h1:hover {
@@ -90,7 +102,7 @@ h1:hover {
 
 h2 {
   text-align: center;
-  font-size: 36px;
+  font-size: clamp(24px, 4vw, 36px);
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 600;
   color: blue;
@@ -105,12 +117,16 @@ h2:hover {
 .btn {
   background: linear-gradient(to top, blue, skyblue);
   color: white;
-  height: 75px;
-  font-size: 36px;
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  min-height: 60px;
+  height: auto;
+  font-size: clamp(20px, 4vw, 36px);
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
   border-radius: 32px;
-  padding: 0 36px;
+  border: none;
+  padding: 12px 30px;
   transition: transform 0.2s ease, background 0.2s ease;
+  cursor: pointer;
+  max-width: 100%;
 }
 
 .btn:hover {
@@ -119,4 +135,68 @@ h2:hover {
 
 .btn:active {
   transform: scale(0.95);
+}
+
+@media (max-width: 600px) {
+  .background {
+    padding: 15px;
+    align-items: flex-start;
+  }
+
+  .window {
+    width: 100%;
+    margin: 80px auto 15px;
+    padding: 18px 14px;
+    border-radius: 22px;
+  }
+
+  .nav_menu {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: clamp(36px, 13vw, 60px);
+    line-height: 1.05;
+    margin: 15px 0;
+  }
+
+  h2 {
+    font-size: clamp(22px, 7vw, 30px);
+    line-height: 1.1;
+    margin: 12px 0;
+  }
+
+  .btn {
+    width: 100%;
+    min-height: 58px;
+    padding: 10px 20px;
+    font-size: 24px;
+    border-radius: 22px;
+  }
+
+  .window:hover,
+  h1:hover,
+  h2:hover,
+  .btn:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .window {
+    padding: 14px 10px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+
+  .btn {
+    font-size: 21px;
+    min-height: 54px;
+  }
 }
