@@ -1,5 +1,3 @@
-console.log("Dumbfounded Script Connected! Query string is:", window.location.search);
-
 const urlParams = new URLSearchParams(window.location.search);
 
 if (urlParams.get('utm_source') === 'chatgpt.com') {
