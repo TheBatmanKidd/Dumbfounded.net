@@ -17,6 +17,10 @@ a {
   font-family: 'Comic Sans MS', 'Comic Sans', cursive;
 }
 
+.center-wrapper {
+  text-align: center;
+}
+
 .btn {
   background: linear-gradient(to top, blue, skyblue);
   color: white;
