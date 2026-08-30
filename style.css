@@ -32,6 +32,14 @@
 
 .fade_slide_up {
   animation: fadeSlideUp 0.8s ease-out forwards;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  width: 100%;
+  padding-top: 100px;
 }
 
 a {
@@ -51,19 +59,17 @@ a {
 
 .background {
   position: fixed;
-  top: 0;
-  left: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(050, 255, 050, 0.6) 0%,
-    rgba(050, 255, 050, 0.2) 100%
-  );
+  inset: 0;
   min-height: 100vh;
   min-width: 100vw;
+  padding: 20px;
+  box-sizing: border-box;
+
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 20px;
+  align-items: flex-start;
+
+  overflow-y: auto;
 }
 
 @keyframes lockBackground {
