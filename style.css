@@ -32,12 +32,10 @@
 
 .fade_slide_up {
   animation: fadeSlideUp 0.8s ease-out forwards;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 50px;
-
   width: 100%;
   padding-top: 100px;
 }
@@ -50,12 +48,12 @@ a {
 
 .nav_menu {
   position: fixed;
+  z-index: 1000;
   top: 0;
   left: 0;
   width: 100%;
   padding: 15px;
   box-sizing: border-box;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,7 +61,6 @@ a {
 
 .nav_menu a {
   display: inline-block;
-
   color: #000080;
   text-decoration: none;
   font-family: 'Comic Sans MS', 'Comic Sans', cursive;
@@ -74,23 +71,18 @@ a {
 .background {
   position: fixed;
   inset: 0;
-
   min-height: 100vh;
   min-width: 100vw;
-
   background: linear-gradient(
     to bottom,
     rgba(50, 255, 50, 0.6) 0%,
     rgba(50, 255, 50, 0.2) 100%
   );
-
   display: flex;
   justify-content: center;
   align-items: flex-start;
-
   padding: 20px;
   box-sizing: border-box;
-
   overflow-y: auto;
 }
 
