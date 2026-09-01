@@ -1,0 +1,142 @@
+.window {
+  margin-top: 0;
+  min-width: 85vw;
+  background: linear-gradient(
+    to bottom,
+    rgba(050, 050, 255, 0.6) 0%,
+    rgba(050, 050, 255, 0.2) 100%
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 10px 25px rgba(0, 0, 0, 0.3);
+  color: #00FF00;
+  transition: transform 0.2s ease;
+}
+
+.window:hover {
+  transform: scale(1.015);
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade_slide_up {
+  animation: fadeSlideUp 0.8s ease-out forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  padding-top: 100px;
+}
+
+a {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  font-size: 32px;
+}
+
+.nav_menu {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav_menu a {
+  display: inline-block;
+  color: #000080;
+  text-decoration: none;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-size: 32px;
+  line-height: 1;
+  padding: 2px 0;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: linear-gradient(
+    to bottom,
+    rgba(50, 255, 50, 0.6) 0%,
+    rgba(50, 255, 50, 0.2) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+@keyframes lockBackground {
+  to {
+    position: fixed;
+  }
+}
+
+h1 {
+  text-align: center;
+  font-size: 92px;
+  font-family: 'Ultra', sans-serif;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  color: red;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+h1:hover {
+  transform: scale(1.02);
+}
+
+h2 {
+  text-align: center;
+  font-size: 36px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  color: blue;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+h2:hover {
+  transform: scale(1.0125);
+}
+
+.btn {
+  background: linear-gradient(to top, blue, skyblue);
+  color: white;
+  height: 75px;
+  font-size: 36px;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  border-radius: 32px;
+  padding: 0 36px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
