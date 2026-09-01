@@ -1,5 +1,5 @@
 .window {
-  margin-top: -50;
+  margin-top: 0;
   min-width: 85vw;
   background: linear-gradient(
     to bottom,
@@ -37,7 +37,7 @@
   align-items: center;
   gap: 50px;
   width: 100%;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 a {
