@@ -1,6 +1,6 @@
 .window {
   margin-top: 0;
-  min-width: 95vw;
+  min-width: 100vw;
   background: linear-gradient(to bottom, #5050ff, #3030aa);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
