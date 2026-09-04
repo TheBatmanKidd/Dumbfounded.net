@@ -4,14 +4,35 @@ html, body {
   padding: 0;
 }
 
+.background {
+  position: relative; 
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom, #50ff50, #30aa30);
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
 .content-wrapper {
   flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px; 
 }
 
 footer {
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  font-family: 'Barlow Condensed', sans-serif;
+  color: #000080;
+  font-weight: bold;
 }
 
 .window {
@@ -85,20 +106,6 @@ a {
 
 .nav_menu a:hover {
   transform: scale(1.02);
-}
-
-.background {
-  position: fixed;
-  inset: 0;
-  min-height: 100vh;
-  min-width: 100vw;
-  background: linear-gradient(to bottom, #50ff50, #30aa30);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 20px;
-  box-sizing: border-box;
-  overflow-y: auto;
 }
 
 @keyframes lockBackground {
