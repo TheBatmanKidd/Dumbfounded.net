@@ -6,10 +6,29 @@
     <meta name="description" content="Official Dumbfounded™ Website">
 
     <style type="text/css">
+
         body {
             background-color: #33ff33;
             margin: 10px;
             font-family: Arial, Helvetica, sans-serif;
+        }
+
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         .window {
@@ -19,6 +38,8 @@
             margin-top: 20px;
             -webkit-border-radius: 15px;
             border-radius: 15px;
+            -webkit-animation: fadeIn 1.5s ease-in;
+            animation: fadeIn 1.5s ease-in;
         }
 
         h1 {
@@ -38,6 +59,8 @@
         .nav_menu {
             text-align: center;
             margin-bottom: 20px;
+            -webkit-animation: fadeIn 1s ease-in;
+            animation: fadeIn 1s ease-in;
         }
 
         .nav_menu a {
@@ -52,6 +75,7 @@
         a {
             color: #000080;
         }
+
     </style>
 </head>
 
