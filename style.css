@@ -89,18 +89,15 @@ a {
 }
 
 .background {
-  position: fixed;
-  inset: 0;
+  position: relative;
   min-height: 100vh;
-  min-width: 100vw;
+  width: 100%;
   background: linear-gradient(to bottom, #50ff50, #30aa30);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding: 20px;
   box-sizing: border-box;
-  overflow-y: auto;
 }
 
 @keyframes lockBackground {
