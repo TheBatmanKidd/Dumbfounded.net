@@ -1,11 +1,24 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.content-wrapper {
+  flex: 1;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  font-family: 'Barlow Condensed', Arial, Helvetica, sans-serif;
+  padding: 20px 0;
+}
+
 .window {
   margin-top: 0;
-  min-width: 85vw;
-  background: linear-gradient(
-    to bottom,
-    rgba(050, 050, 255, 0.6) 0%,
-    rgba(050, 050, 255, 0.2) 100%
-  );
+  min-width: 98vw;
+  background: linear-gradient(to bottom, #5050ff, #3030aa);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 32px;
@@ -37,13 +50,13 @@
   align-items: center;
   gap: 50px;
   width: 100%;
-  padding-top: 100px;
+  padding-top: 40px;
 }
 
 a {
   font-family: 'Comic Sans MS', 'Comic Sans', cursive;
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
-  font-size: 32px;
+  font-size: 24px;
 }
 
 .nav_menu {
@@ -64,10 +77,15 @@ a {
   color: #000080;
   text-decoration: none;
   font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 1;
   padding: 2px 0;
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease;
+}
+
+.nav_menu a:hover {
+  transform: scale(1.02);
 }
 
 .background {
@@ -75,13 +93,14 @@ a {
   inset: 0;
   min-height: 100vh;
   min-width: 100vw;
-  background: {
+  background: linear-gradient(to bottom, #50ff50, #30aa30);
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
   box-sizing: border-box;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 @keyframes lockBackground {
@@ -93,7 +112,7 @@ a {
 h1 {
   text-align: center;
   font-size: 92px;
-  font-family: 'Ultra', sans-serif;
+  font-family: 'Bowlby One', sans-serif;
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
   color: red;
   display: block;
@@ -109,7 +128,7 @@ h2 {
   font-size: 36px;
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 600;
-  color: blue;
+  color: skyblue;
   display: block;
   transition: transform 0.2s ease;
 }
