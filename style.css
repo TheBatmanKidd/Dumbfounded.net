@@ -55,6 +55,7 @@ footer {
 
 a {
   font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  color: #ee0000;
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
   font-size: 24px;
 }
