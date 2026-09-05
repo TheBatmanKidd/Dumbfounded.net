@@ -9,12 +9,9 @@ html, body {
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
   text-align: center;
-  font-family: 'Barlow Condensed', 'Arial', 'Helvetica', sans-serif;
+  font-family: 'Barlow Condensed', Arial, Helvetica, sans-serif;
   padding: 20px 0;
 }
 
@@ -98,6 +95,7 @@ a {
   min-width: 100vw;
   background: linear-gradient(to bottom, #50ff50, #30aa30);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   padding: 20px;
