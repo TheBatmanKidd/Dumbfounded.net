@@ -5,8 +5,10 @@ if (urlParams.get('utm_source') === 'chatgpt.com') {
     document.title = "Dumbfounded™ - ChatGPT, Really?";
 }
 
-if (currentUrl.pathname === '/' || currentUrl.pathname === '') {
-    currentUrl.pathname = '/sub';
+const isBaseDomain = currentUrl.hostname === 'dumbfounded.net' || currentUrl.hostname === 'www.dumbfounded.net';
+
+if (isBaseDomain && currentUrl.pathname !== '/home') {
+    currentUrl.pathname = '/home';
 }
 
 currentUrl.search = '';
