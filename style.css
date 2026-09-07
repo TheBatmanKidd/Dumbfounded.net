@@ -22,7 +22,7 @@ footer {
   z-index: 9999;
   font-family: "Barlow Condensed", sans-serif;
   font-size: 24px;
-  color: green;
+  color: #00ff00;
   transform: translateY(-100%);
   animation: slideIn 0.3s ease forwards;
 }
