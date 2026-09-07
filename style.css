@@ -20,6 +20,8 @@ footer {
   top: 0;
   left: 0;
   z-index: 9999;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 24px;
 }
 
 .window {
