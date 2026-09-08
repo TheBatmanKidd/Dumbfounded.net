@@ -20,9 +20,17 @@ footer {
   top: 0;
   left: 0;
   z-index: 9999;
+  width: 220px;
+  height: 140px;
   font-family: "Barlow Condensed", sans-serif;
-  font-size: 24px;
-  color: #0000ff;
+  color: red;
+  background: #5050ff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 15px;
+  box-sizing: border-box;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
   transform: translateY(-100%);
   animation: slideIn 0.3s ease forwards;
 }
