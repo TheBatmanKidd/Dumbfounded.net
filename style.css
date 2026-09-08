@@ -25,7 +25,7 @@ footer {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 24px;
   color: red;
-  background: #5050ff;
+  background: linear-gradient(to bottom, #5050ff, #3030aa);
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
