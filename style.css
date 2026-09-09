@@ -8,6 +8,12 @@ html, body {
   flex: 1;
 }
 
+#toggleButton {
+  position: relative;
+  z-index: 99999;
+  pointer-events: auto;
+}
+
 footer {
   width: 100%;
   text-align: center;
