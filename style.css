@@ -12,6 +12,8 @@ html, body {
   position: relative;
   z-index: 99999;
   pointer-events: auto;
+  top: 0;
+  right: 0;
 }
 
 footer {
