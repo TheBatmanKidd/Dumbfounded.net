@@ -9,7 +9,7 @@ html, body {
 }
 
 #toggleButton {
-  position: relative;
+  position: fixed;
   z-index: 99999;
   pointer-events: auto;
   top: 0;
