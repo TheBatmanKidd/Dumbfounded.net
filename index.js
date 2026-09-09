@@ -1,6 +1,13 @@
 const currentUrl = new URL(window.location.href);
 const urlParams = currentUrl.searchParams;
 
+const button = document.getElementById("toggleButton");
+const content = document.getElementById("win");
+
+button.addEventListener("click", () => {
+  content.hidden = !content.hidden;
+});
+
 const windowElement = document.querySelector(".window");
 
 const observer = new IntersectionObserver((entries) => {
