@@ -8,7 +8,7 @@ html, body {
   flex: 1;
 }
 
-#toggleButton {
+#toggleTitleButton {
   position: fixed;
   z-index: 99999;
   pointer-events: auto;
