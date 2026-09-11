@@ -13,6 +13,13 @@ hr {
   background-color: white;
 }
 
+.g-recaptcha {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  width: 100%;
+}
+
 .window {
   margin-top: 0;
   min-width: 85vw;
