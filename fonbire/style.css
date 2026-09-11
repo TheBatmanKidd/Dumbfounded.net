@@ -6,6 +6,10 @@
   font-display: swap;
 }
 
+hr {
+  margin-top: -30px;
+}
+
 .window {
   margin-top: 0;
   min-width: 85vw;
