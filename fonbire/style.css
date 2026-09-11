@@ -121,6 +121,7 @@ h1 {
   color: transparent;
   display: block;
   transition: transform 0.2s ease;
+  margin-top: 80px;
 }
 
 h1:hover {
