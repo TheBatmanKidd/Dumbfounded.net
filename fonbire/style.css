@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'CSMS';
+  src: url('/fonts/ComicSansMS.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 .window {
   margin-top: 0;
   min-width: 85vw;
@@ -41,7 +49,7 @@
 }
 
 a {
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-family: 'CSMS';
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
   font-size: 32px;
 }
@@ -63,7 +71,7 @@ a {
   display: inline-block;
   color: #000080;
   text-decoration: none;
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-family: 'CSMS';
   font-size: 32px;
   line-height: 1;
   padding: 2px 0;
