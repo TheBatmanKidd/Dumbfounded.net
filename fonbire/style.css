@@ -84,7 +84,7 @@ a {
   min-height: 100vh;
   min-width: 100vw;
   background: linear-gradient(
-    to bottom,
+    to top,
     #fe4115 0%,
     #ffbb77 100%
   );
