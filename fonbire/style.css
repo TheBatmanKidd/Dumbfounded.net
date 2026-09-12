@@ -21,7 +21,7 @@ hr {
 }
 
 .window {
-  margin-top: 0px;
+  margin-top: 10px;
   min-width: 85vw;
   background: linear-gradient(
     to bottom,
