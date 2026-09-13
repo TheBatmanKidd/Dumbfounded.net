@@ -51,27 +51,50 @@ window.history.replaceState(
   currentUrl.href
 );
 
-let currentScriptHash = null;
+const CHECK_INTERVAL = 5000;
+const FILES_TO_CHECK = ['/index.html', '/style.css', '/index.js'];
 
-function detectBuildChange() {
-    fetch('/index.html', { cache: 'no-cache' })
-        .then(res => res.text())
-        .then(html => {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            
-            const mainScript = doc.querySelector('script[src*="main"]');
-            const newHash = mainScript ? mainScript.getAttribute('src') : null;
+let initialFileFingerprints = {};
 
-            if (!currentScriptHash) {
-                currentScriptHash = newHash;
-                return;
-            }
+async function getFileFingerprint(url) {
+    try {
+        const response = await fetch(url, { method: 'HEAD', cache: 'no-cache' });
+        
+        if (!response.ok) return null;
 
-            if (newHash && newHash !== currentScriptHash) {
-                window.location.reload();
-            }
-        });
+        const etag = response.headers.get('ETag');
+        const lastModified = response.headers.get('Last-Modified');
+
+        return etag || lastModified || null;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
 }
 
-setInterval(detectBuildChange, 5 * 60 * 1000);
+async function checkForWebsiteUpdates() {
+    let updateDetected = false;
+
+    for (const fileUrl of FILES_TO_CHECK) {
+        const serverFingerprint = await getFileFingerprint(fileUrl);
+        
+        if (!serverFingerprint) continue; 
+
+        if (!initialFileFingerprints[fileUrl]) {
+            initialFileFingerprints[fileUrl] = serverFingerprint;
+            continue;
+        }
+
+        if (initialFileFingerprints[fileUrl] !== serverFingerprint) {
+            updateDetected = true;
+            break; 
+        }
+    }
+
+    if (updateDetected) {
+        window.location.reload();
+    }
+}
+
+checkForWebsiteUpdates();
+setInterval(checkForWebsiteUpdates, CHECK_INTERVAL);
