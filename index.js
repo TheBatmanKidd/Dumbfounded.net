@@ -50,3 +50,28 @@ window.history.replaceState(
   '',
   currentUrl.href
 );
+
+let currentScriptHash = null;
+
+function detectBuildChange() {
+    fetch('/index.html', { cache: 'no-cache' })
+        .then(res => res.text())
+        .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            
+            const mainScript = doc.querySelector('script[src*="main"]');
+            const newHash = mainScript ? mainScript.getAttribute('src') : null;
+
+            if (!currentScriptHash) {
+                currentScriptHash = newHash;
+                return;
+            }
+
+            if (newHash && newHash !== currentScriptHash) {
+                window.location.reload();
+            }
+        });
+}
+
+setInterval(detectBuildChange, 5 * 60 * 1000);
