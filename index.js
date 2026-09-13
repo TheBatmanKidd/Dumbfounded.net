@@ -58,14 +58,23 @@ let initialFileFingerprints = {};
 
 async function getFileFingerprint(url) {
     try {
-        const response = await fetch(url, { method: 'HEAD', cache: 'no-cache' });
+        const response = await fetch(url, { 
+            method: 'GET',
+            cache: 'no-store',
+            cf: {
+                cacheTtl: -1,
+                cacheEverything: false
+            },
+            headers: {
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache'
+            }
+        });
         
         if (!response.ok) return null;
 
-        const etag = response.headers.get('ETag');
-        const lastModified = response.headers.get('Last-Modified');
-
-        return etag || lastModified || null;
+        const text = await response.text();
+        return text.length + text.slice(-100);
     } catch (error) {
         console.error(error);
         return null;
