@@ -8,7 +8,24 @@ button.addEventListener("click", () => {
   content.hidden = !content.hidden;
 });
 
-const windowElement = document.querySelector(".window");
+const mascotImg = document.querySelector('.mask'); 
+const windowElement = document.getElementById('win');
+
+let paragraphText = document.querySelector('.mascot-text');
+if (!paragraphText && mascotImg) {
+  paragraphText = document.createElement('p');
+  paragraphText.className = 'mascot-text';
+  paragraphText.textContent = "Welcome to the inner circle.";
+  mascotImg.parentNode.appendChild(paragraphText);
+}
+
+if (mascotImg) {
+  mascotImg.style.cursor = 'pointer';
+  mascotImg.addEventListener('click', () => {
+    windowElement.classList.toggle('slide-left');
+    paragraphText.classList.toggle('fade-in');
+  });
+}
 
 const observer = new IntersectionObserver((entries) => {
   const entry = entries[0];
