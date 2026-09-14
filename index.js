@@ -22,28 +22,29 @@ if (!paragraphText && mascotImg) {
 if (mascotImg) {
   mascotImg.style.cursor = 'pointer';
   mascotImg.addEventListener('click', () => {
-    mascotImg.classList.toggle('slide-left');
-    paragraphText.classList.toggle('fade-in');
+    const parentContainer = mascotImg.closest('.image-container');
+    if (parentContainer) {
+      parentContainer.classList.toggle('active');
+    }
   });
 }
 
 const observer = new IntersectionObserver((entries) => {
-  const entry = entries;
-
-  if (!entry.isIntersecting) {
-    if (!document.querySelector(".top-left")) {
-      const topLeft = document.createElement("div");
-      topLeft.className = "top-left";
-      topLeft.textContent = document.title;
-      document.body.appendChild(topLeft);
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      if (!document.querySelector(".top-left")) {
+        const topLeft = document.createElement("div");
+        topLeft.className = "top-left";
+        topLeft.textContent = document.title;
+        document.body.appendChild(topLeft);
+      }
+    } else {
+      const topLeft = document.querySelector(".top-left");
+      if (topLeft) {
+        topLeft.remove();
+      }
     }
-  } else {
-    const topLeft = document.querySelector(".top-left");
-
-    if (topLeft) {
-      topLeft.remove();
-    }
-  }
+  });
 }, {
   threshold: 0
 });
