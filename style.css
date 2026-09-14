@@ -206,32 +206,3 @@ h2:hover {
 .btn:active {
   transform: scale(0.95);
 }
-
-.image-container {
-  display: grid;
-  grid-template-columns: auto 0fr;
-  align-items: center;
-  justify-content: center;
-  gap: 0px;
-  transition: grid-template-columns 0.6s cubic-bezier(0.25, 1, 0.5, 1), gap 0.6s ease;
-}
-
-.image-container.active {
-  grid-template-columns: auto 1fr;
-  gap: 20px;
-}
-
-.mascot-text {
-  overflow: hidden;
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.4s ease-in-out;
-  margin: 0;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1.5rem;
-  color: #000080;
-}
-
-.image-container.active .mascot-text {
-  opacity: 1;
-}
