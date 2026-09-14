@@ -22,13 +22,13 @@ if (!paragraphText && mascotImg) {
 if (mascotImg) {
   mascotImg.style.cursor = 'pointer';
   mascotImg.addEventListener('click', () => {
-    windowElement.classList.toggle('slide-left');
+    mascotImg.classList.toggle('slide-left');
     paragraphText.classList.toggle('fade-in');
   });
 }
 
 const observer = new IntersectionObserver((entries) => {
-  const entry = entries[0];
+  const entry = entries;
 
   if (!entry.isIntersecting) {
     if (!document.querySelector(".top-left")) {
