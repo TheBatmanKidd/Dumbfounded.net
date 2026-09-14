@@ -104,6 +104,14 @@ footer {
   padding-top: 40px;
 }
 
+.image-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
 a {
   font-family: 'CSMS', cursive;
   color: #ee0000;
