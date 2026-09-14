@@ -8,43 +8,25 @@ button.addEventListener("click", () => {
   content.hidden = !content.hidden;
 });
 
-const mascotImg = document.querySelector('.mask'); 
-const windowElement = document.getElementById('win');
-
-let paragraphText = document.querySelector('.mascot-text');
-if (!paragraphText && mascotImg) {
-  paragraphText = document.createElement('p');
-  paragraphText.className = 'mascot-text';
-  paragraphText.textContent = "Welcome to the inner circle.";
-  mascotImg.parentNode.appendChild(paragraphText);
-}
-
-if (mascotImg) {
-  mascotImg.style.cursor = 'pointer';
-  mascotImg.addEventListener('click', () => {
-    const parentContainer = mascotImg.closest('.image-container');
-    if (parentContainer) {
-      parentContainer.classList.toggle('active');
-    }
-  });
-}
+const windowElement = document.querySelector(".window");
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) {
-      if (!document.querySelector(".top-left")) {
-        const topLeft = document.createElement("div");
-        topLeft.className = "top-left";
-        topLeft.textContent = document.title;
-        document.body.appendChild(topLeft);
-      }
-    } else {
-      const topLeft = document.querySelector(".top-left");
-      if (topLeft) {
-        topLeft.remove();
-      }
+  const entry = entries[0];
+
+  if (!entry.isIntersecting) {
+    if (!document.querySelector(".top-left")) {
+      const topLeft = document.createElement("div");
+      topLeft.className = "top-left";
+      topLeft.textContent = document.title;
+      document.body.appendChild(topLeft);
     }
-  });
+  } else {
+    const topLeft = document.querySelector(".top-left");
+
+    if (topLeft) {
+      topLeft.remove();
+    }
+  }
 }, {
   threshold: 0
 });
