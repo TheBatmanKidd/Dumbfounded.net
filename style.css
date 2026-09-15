@@ -158,7 +158,14 @@ h1 {
   font-size: 92px;
   font-family: 'Bowlby One', sans-serif;
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
-  color: red;
+  background: linear-gradient(
+    to top,
+    #8b0000,
+    #ff0000
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
   display: block;
   transition: transform 0.2s ease;
 }
