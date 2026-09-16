@@ -2,21 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ultra&family=Barlow+Condensed&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Ultra&family=Barlow+Condensed&display=swap" rel="stylesheet">
     <title>Search Thingies | Dumbfounded™ Website</title>
     <link rel="icon" type="image/png" href="/DumbfoundedLogo2.png">
   </head>
   <body>
-    <input type="text" id="searchInput" placeholder="Type 'test'">
+    <input type="text" id="searchInput" placeholder="Type 'apple', 'banana', etc...">
     <button id="searchButton">Search</button>
 
     <h2>Results:</h2>
     <ul id="resultsList"></ul>
 
     <script>
-        const data = ["test"];
+        const data = ["test", "apple", "banana", "dumbfounded"];
 
         const searchInput = document.getElementById('searchInput');
         const searchButton = document.getElementById('searchButton');
@@ -27,18 +27,27 @@
             const query = params.get('q') || ''; 
 
             searchInput.value = query;
+            resultsList.innerHTML = '';
+
+            if (query.trim() === '') {
+                return;
+            }
 
             const filteredData = data.filter(item => 
                 item.toLowerCase().includes(query.toLowerCase())
             );
 
-            resultsList.innerHTML = '';
-
-            filteredData.forEach(item => {
+            if (filteredData.length === 0) {
                 const li = document.createElement('li');
-                li.textContent = item;
+                li.textContent = 'No results found';
                 resultsList.appendChild(li);
-            });
+            } else {
+                filteredData.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    resultsList.appendChild(li);
+                });
+            }
         }
 
         searchButton.addEventListener('click', () => {
@@ -50,6 +59,7 @@
 
             updateUIFromURL();
         });
+
         window.addEventListener('DOMContentLoaded', updateUIFromURL);
         window.addEventListener('popstate', updateUIFromURL);
     </script>
