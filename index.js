@@ -43,6 +43,14 @@ if (currentUrl.pathname !== '/home') {
   currentUrl.pathname = '/home';
 }
 
+if (window.location.protocol === 'https:') {
+  console.log("https i see");
+} else if (window.location.protocol === 'http:') {
+  const htt = document.createElement('a');
+  htt.textContent = "I see that you are using http, wow.";
+  document.body.div.div.span.nav.appendChild(htt);
+}
+
 currentUrl.search = '';
 
 window.history.replaceState(
