@@ -8,14 +8,45 @@
   <body>
     <input type="text" id="searchInput" placeholder="Search...">
     <button id="searchButton">Search</button>
-
     <h2>Results:</h2>
     <div id="resultsContainer"></div>
-
     <script>
         const searchInput = document.getElementById('searchInput');
         const searchButton = document.getElementById('searchButton');
         const resultsContainer = document.getElementById('resultsContainer');
+
+        function createTestPageOne() {
+            const container = document.createElement('div');
+            const heading = document.createElement('h1');
+            heading.textContent = "Test Page Alpha";
+            const text = document.createElement('p');
+            text.textContent = "This is the primary experimental layout block.";
+            container.appendChild(heading);
+            container.appendChild(text);
+            return container;
+        }
+
+        function createTestPageTwo() {
+            const container = document.createElement('div');
+            const heading = document.createElement('h2');
+            heading.textContent = "Test Page Beta";
+            const pre = document.createElement('pre');
+            pre.textContent = "Console Log: Active\nData Stream: Main";
+            container.appendChild(heading);
+            container.appendChild(pre);
+            return container;
+        }
+
+        function createTestPageThree() {
+            const container = document.createElement('div');
+            const heading = document.createElement('h3');
+            heading.textContent = "Test Page Gamma";
+            const btn = document.createElement('button');
+            btn.textContent = "Execute Node Task";
+            container.appendChild(heading);
+            container.appendChild(btn);
+            return container;
+        }
 
         function updateUIFromURL() {
             const params = new URLSearchParams(window.location.search);
@@ -29,18 +60,19 @@
             }
 
             if (query === 'test') {
-                const title = document.createElement('h1');
-                title.textContent = "testum";
-                
-                const codeBlock = document.createElement('pre');
-                codeBlock.textContent = "Dumbfounded™";
+                const elementLayouts = [
+                    createTestPageOne(),
+                    createTestPageTwo(),
+                    createTestPageThree()
+                ];
 
-                resultsContainer.appendChild(title);
-                resultsContainer.appendChild(codeBlock);
-            } 
-            else {
+                elementLayouts.forEach(layoutElement => {
+                    resultsContainer.appendChild(layoutElement);
+                    resultsContainer.appendChild(document.createElement('hr'));
+                });
+            } else {
                 const fallback = document.createElement('p');
-                fallback.textContent = 'No matching specific layout found for this keyword.';
+                fallback.textContent = 'No matching layout layouts found.';
                 resultsContainer.appendChild(fallback);
             }
         }
