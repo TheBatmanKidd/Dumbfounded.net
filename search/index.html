@@ -6,74 +6,112 @@
     <link rel="icon" type="image/png" href="/DumbfoundedLogo2.png">
   </head>
   <body>
-    <input type="text" id="searchInput" placeholder="Search...">
+    <input type="text" id="searchInput" placeholder="Search any word...">
     <button id="searchButton">Search</button>
+
     <h2>Results:</h2>
     <div id="resultsContainer"></div>
+
     <script>
         const searchInput = document.getElementById('searchInput');
         const searchButton = document.getElementById('searchButton');
         const resultsContainer = document.getElementById('resultsContainer');
 
-        function createTestPageOne() {
-            const container = document.createElement('div');
-            const heading = document.createElement('h1');
-            heading.textContent = "Test Page Alpha";
-            const text = document.createElement('p');
-            text.textContent = "This is the primary experimental layout block.";
-            container.appendChild(heading);
-            container.appendChild(text);
-            return container;
+        async function getPagesFromSitemap() {
+            try {
+                const response = await fetch('/sitemap.xml');
+                if (!response.ok) return [];
+                
+                const xmlText = await response.text();
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+                
+                const locElements = xmlDoc.getElementsByTagName('loc');
+                const urls = [];
+                
+                for (let i = 0; i < locElements.length; i++) {
+                    urls.push(locElements[i].textContent);
+                }
+                return urls;
+            } catch (err) {
+                console.error(err);
+                return [];
+            }
         }
 
-        function createTestPageTwo() {
-            const container = document.createElement('div');
-            const heading = document.createElement('h2');
-            heading.textContent = "Test Page Beta";
-            const pre = document.createElement('pre');
-            pre.textContent = "Console Log: Active\nData Stream: Main";
-            container.appendChild(heading);
-            container.appendChild(pre);
-            return container;
-        }
-
-        function createTestPageThree() {
-            const container = document.createElement('div');
-            const heading = document.createElement('h3');
-            heading.textContent = "Test Page Gamma";
-            const btn = document.createElement('button');
-            btn.textContent = "Execute Node Task";
-            container.appendChild(heading);
-            container.appendChild(btn);
-            return container;
-        }
-
-        function updateUIFromURL() {
+        async function updateUIFromURL() {
             const params = new URLSearchParams(window.location.search);
-            const query = (params.get('q') || '').toLowerCase().trim(); 
+            const query = (params.get('q') || '').trim(); 
 
-            searchInput.value = params.get('q') || '';
+            searchInput.value = query;
             resultsContainer.innerHTML = '';
 
             if (query === '') {
                 return;
             }
 
-            if (query === 'test') {
-                const elementLayouts = [
-                    createTestPageOne(),
-                    createTestPageTwo(),
-                    createTestPageThree()
-                ];
+            resultsContainer.textContent = 'Scanning site...';
 
-                elementLayouts.forEach(layoutElement => {
-                    resultsContainer.appendChild(layoutElement);
-                    resultsContainer.appendChild(document.createElement('hr'));
-                });
+            const pagesToSearch = await getPagesFromSitemap();
+            
+            if (pagesToSearch.length === 0) {
+                resultsContainer.textContent = 'Could not read sitemap.xml to find pages.';
+                return;
+            }
+
+            let matchCount = 0;
+            const containerDiv = document.createElement('div');
+
+            for (const url of pagesToSearch) {
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) continue;
+
+                    const htmlText = await response.text();
+
+                    if (htmlText.toLowerCase().includes(query.toLowerCase())) {
+                        matchCount++;
+
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(htmlText, 'text/html');
+                        const pageTitle = doc.querySelector('title')?.textContent || url;
+
+                        const bodyText = doc.body?.textContent || '';
+                        const queryIndex = bodyText.toLowerCase().indexOf(query.toLowerCase());
+                        
+                        const start = Math.max(0, queryIndex - 40);
+                        const end = Math.min(bodyText.length, queryIndex + query.length + 40);
+                        let snippet = bodyText.slice(start, end);
+
+                        const regex = new RegExp(`(${query})`, 'gi');
+                        snippet = snippet.replace(regex, '<b>\$1</b>');
+
+                        const resultBlock = document.createElement('div');
+                        
+                        const link = document.createElement('a');
+                        link.href = url;
+                        link.innerHTML = `<h3>${pageTitle}</h3>`;
+
+                        const preview = document.createElement('p');
+                        preview.innerHTML = `...${snippet}...`;
+
+                        resultBlock.appendChild(link);
+                        resultBlock.appendChild(preview);
+                        containerDiv.appendChild(resultBlock);
+                    }
+                } catch (err) {
+                    console.error(err);
+                }
+            }
+
+            resultsContainer.innerHTML = '';
+
+            if (matchCount === 0) {
+                const noResults = document.createElement('p');
+                noResults.textContent = 'No pages contain that word.';
+                resultsContainer.appendChild(noResults);
             } else {
-                const fallback = document.createElement('p');
-                fallback.textContent = 'No matching layout layouts found.';
-                resultsContainer.appendChild(fallback);
+                resultsContainer.appendChild(containerDiv);
             }
         }
 
