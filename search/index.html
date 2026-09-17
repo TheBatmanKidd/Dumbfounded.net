@@ -2,51 +2,46 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Ultra&family=Barlow+Condensed&display=swap" rel="stylesheet">
     <title>Search Thingies | Dumbfounded™ Website</title>
     <link rel="icon" type="image/png" href="/DumbfoundedLogo2.png">
   </head>
   <body>
-    <input type="text" id="searchInput" placeholder="Type 'test'">
+    <input type="text" id="searchInput" placeholder="Search...">
     <button id="searchButton">Search</button>
 
     <h2>Results:</h2>
-    <ul id="resultsList"></ul>
+    <div id="resultsContainer"></div>
 
     <script>
-        const data = ["test"];
-
         const searchInput = document.getElementById('searchInput');
         const searchButton = document.getElementById('searchButton');
-        const resultsList = document.getElementById('resultsList');
+        const resultsContainer = document.getElementById('resultsContainer');
 
         function updateUIFromURL() {
             const params = new URLSearchParams(window.location.search);
-            const query = params.get('q') || ''; 
+            const query = (params.get('q') || '').toLowerCase().trim(); 
 
-            searchInput.value = query;
-            resultsList.innerHTML = '';
+            searchInput.value = params.get('q') || '';
+            resultsContainer.innerHTML = '';
 
-            if (query.trim() === '') {
+            if (query === '') {
                 return;
             }
 
-            const filteredData = data.filter(item => 
-                item.toLowerCase().includes(query.toLowerCase())
-            );
+            if (query === 'test') {
+                const title = document.createElement('h1');
+                title.textContent = "testum";
+                
+                const codeBlock = document.createElement('pre');
+                codeBlock.textContent = "Dumbfounded™";
 
-            if (filteredData.length === 0) {
-                const li = document.createElement('li');
-                li.textContent = 'No results found';
-                resultsList.appendChild(li);
-            } else {
-                filteredData.forEach(item => {
-                    const li = document.createElement('li');
-                    li.textContent = item;
-                    resultsList.appendChild(li);
-                });
+                resultsContainer.appendChild(title);
+                resultsContainer.appendChild(codeBlock);
+            } 
+            else {
+                const fallback = document.createElement('p');
+                fallback.textContent = 'No matching specific layout found for this keyword.';
+                resultsContainer.appendChild(fallback);
             }
         }
 
