@@ -26,12 +26,20 @@
                 const parser = new DOMParser();
                 const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
                 
-                const locElements = xmlDoc.getElementsByTagName('loc');
+                const locElements = xmlDoc.getElementsByTagNameNS('http://sitemaps.org', 'loc');
                 const urls = [];
                 
                 for (let i = 0; i < locElements.length; i++) {
-                    urls.push(locElements[i].textContent);
+                    urls.push(locElements[i].textContent.trim());
                 }
+                
+                if (urls.length === 0) {
+                    const fallbackElements = xmlDoc.getElementsByTagName('loc');
+                    for (let i = 0; i < fallbackElements.length; i++) {
+                        urls.push(fallbackElements[i].textContent.trim());
+                    }
+                }
+                
                 return urls;
             } catch (err) {
                 console.error(err);
@@ -55,11 +63,11 @@
             const pagesToSearch = await getPagesFromSitemap();
             
             if (pagesToSearch.length === 0) {
-                resultsContainer.textContent = 'Could not read sitemap.xml to find pages.';
+                resultsContainer.textContent = 'could not read sitemap.xml to find pages';
                 return;
             }
 
-            let matchCount = 0;
+            let totalMatchCount = 0;
             const containerDiv = document.createElement('div');
 
             for (const url of pagesToSearch) {
@@ -68,35 +76,41 @@
                     if (!response.ok) continue;
 
                     const htmlText = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(htmlText, 'text/html');
+                    const bodyText = doc.body?.textContent || '';
 
-                    if (htmlText.toLowerCase().includes(query.toLowerCase())) {
-                        matchCount++;
+                    const regex = new RegExp(query.replace(/[-\/\\^\$*+?.()|[\]{}]/g, '\\$&'), 'gi');
+                    const matches = [...bodyText.matchAll(regex)];
 
-                        const parser = new DOMParser();
-                        const doc = parser.parseFromString(htmlText, 'text/html');
+                    if (matches.length > 0) {
+                        totalMatchCount++;
+
                         const pageTitle = doc.querySelector('title')?.textContent || url;
-
-                        const bodyText = doc.body?.textContent || '';
-                        const queryIndex = bodyText.toLowerCase().indexOf(query.toLowerCase());
-                        
-                        const start = Math.max(0, queryIndex - 40);
-                        const end = Math.min(bodyText.length, queryIndex + query.length + 40);
-                        let snippet = bodyText.slice(start, end);
-
-                        const regex = new RegExp(`(${query})`, 'gi');
-                        snippet = snippet.replace(regex, '<b>\$1</b>');
-
                         const resultBlock = document.createElement('div');
                         
                         const link = document.createElement('a');
                         link.href = url;
                         link.innerHTML = `<h3>${pageTitle}</h3>`;
-
-                        const preview = document.createElement('p');
-                        preview.innerHTML = `...${snippet}...`;
-
                         resultBlock.appendChild(link);
-                        resultBlock.appendChild(preview);
+
+                        const list = document.createElement('ul');
+
+                        matches.forEach(match => {
+                            const queryIndex = match.index;
+                            const start = Math.max(0, queryIndex - 40);
+                            const end = Math.min(bodyText.length, queryIndex + query.length + 40);
+                            let snippet = bodyText.slice(start, end);
+
+                            const innerRegex = new RegExp(`(${query})`, 'gi');
+                            snippet = snippet.replace(innerRegex, '<b>\$1</b>');
+
+                            const listItem = document.createElement('li');
+                            listItem.innerHTML = `...${snippet}...`;
+                            list.appendChild(listItem);
+                        });
+
+                        resultBlock.appendChild(list);
                         containerDiv.appendChild(resultBlock);
                     }
                 } catch (err) {
@@ -106,7 +120,7 @@
 
             resultsContainer.innerHTML = '';
 
-            if (matchCount === 0) {
+            if (totalMatchCount === 0) {
                 const noResults = document.createElement('p');
                 noResults.textContent = 'No pages contain that word.';
                 resultsContainer.appendChild(noResults);
