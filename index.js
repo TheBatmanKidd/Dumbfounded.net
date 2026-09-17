@@ -48,8 +48,14 @@ if (window.location.protocol === 'https:') {
 } else if (window.location.protocol === 'http:') {
   const htt = document.createElement('a');
   htt.textContent = "I see that you are using http, wow.";
-  document.body.div.div.span.nav.appendChild(htt);
+  const targetNav = document.querySelector('body > div > div > span > nav');
+  if (targetNav) {
+    targetNav.appendChild(htt);
+  } else {
+    console.error("couldn't find the target nav element.");
+  }
 }
+
 
 currentUrl.search = '';
 
