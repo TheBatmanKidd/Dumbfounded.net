@@ -2,10 +2,9 @@ const currentUrl = new URL(window.location.href);
 const urlParams = currentUrl.searchParams;
 
 document.addEventListener("DOMContentLoaded", () => {
-    const namespace = "dumbfounded.net"; 
-    const key = "/";
-    
-    fetch(`https://counterapi.dev{namespace}/${key}/up`)
+    const namespace = "dumbfounded_net"; 
+    const key = "homepage_visits"; 
+    fetch(`https://countapi.xyz{namespace}/${key}`)
         .then(response => response.json())
         .then(data => {
             document.getElementById('counter').innerText = data.value;
@@ -15,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('counter').innerText = "Unavailable";
         });
 });
+
 
 const button = document.getElementById("toggleTitleButton");
 const content = document.getElementById("win");
