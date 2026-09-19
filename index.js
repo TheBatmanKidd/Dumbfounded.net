@@ -2,34 +2,11 @@ const currentUrl = new URL(window.location.href);
 const urlParams = currentUrl.searchParams;
 
 document.addEventListener("DOMContentLoaded", () => {
-    const url = "https://kvdb.io";
-
-    fetch(url)
-        .then(response => {
-            if (!response.ok) return "0";
-            return response.text();
-        })
-        .then(currentCount => {
-            const newCount = parseInt(currentCount || 0) + 1;
-            const element = document.getElementById('counter');
-            
-            if (element) {
-                element.innerText = newCount;
-            }
-
-            fetch(url, {
-                method: 'PUT',
-                body: newCount.toString()
-            }).catch(() => {});
-        })
-        .catch(() => {
-            const element = document.getElementById('counter');
-            if (element) {
-                element.innerText = "Unavailable";
-            }
-        });
+    const element = document.getElementById('counter');
+    if (element) {
+        element.innerHTML = `<img src="https://hitwebcounter.com" title="Counter" Alt="Visit Counter" border="0" />`;
+    }
 });
-
 
 const button = document.getElementById("toggleTitleButton");
 const content = document.getElementById("win");
