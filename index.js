@@ -2,9 +2,9 @@ const currentUrl = new URL(window.location.href);
 const urlParams = currentUrl.searchParams;
 
 document.addEventListener("DOMContentLoaded", () => {
-    const namespace = "my-unique-website-name"; 
-    const key = "home-page";
-
+    const namespace = "dumbfounded.net"; 
+    const key = "/";
+    
     fetch(`https://counterapi.dev{namespace}/${key}/up`)
         .then(response => response.json())
         .then(data => {
