@@ -4,17 +4,22 @@ const urlParams = currentUrl.searchParams;
 document.addEventListener("DOMContentLoaded", () => {
     const namespace = "dumbfounded_net"; 
     const key = "homepage_visits"; 
-    fetch(`https://countapi.xyz{namespace}/${key}`)
+    
+    fetch(`https://counterapi.dev{namespace}/${key}/up`)
         .then(response => response.json())
         .then(data => {
-            document.getElementById('counter').innerText = data.value;
+            const element = document.getElementById('counter');
+            if (element) {
+                element.innerText = data.value;
+            }
         })
         .catch(error => {
-            console.error('Error fetching the visit count:', error);
-            document.getElementById('counter').innerText = "Unavailable";
+            const element = document.getElementById('counter');
+            if (element) {
+                element.innerText = "Unavailable";
+            }
         });
 });
-
 
 const button = document.getElementById("toggleTitleButton");
 const content = document.getElementById("win");
