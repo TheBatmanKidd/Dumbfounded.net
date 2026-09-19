@@ -1,6 +1,19 @@
 const currentUrl = new URL(window.location.href);
 const urlParams = currentUrl.searchParams;
 
+const namespace = "dumbfounded.net"; 
+const key = "/";
+
+fetch(`https://countapi.xyz{namespace}/${key}`)
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('counter').innerText = data.value;
+    })
+    .catch(error => {
+        console.error('Error fetching the visit count:', error);
+        document.getElementById('counter').innerText = "Unavailable";
+    });
+
 const button = document.getElementById("toggleTitleButton");
 const content = document.getElementById("win");
 
