@@ -32,7 +32,7 @@ hr {
   background: linear-gradient(
     to bottom,
     #ffa500 0%,
-    #555555 100%
+    #333333 100%
   );
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
