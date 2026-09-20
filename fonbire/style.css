@@ -55,6 +55,23 @@ hr {
   transform: scale(1.015);
 }
 
+.concession-stand h1 {
+  text-align: center;
+  font-size: 100px;
+  font-family: 'Times New Roman', serif;
+  font-weight: 500;
+  background: linear-gradient(
+    to top,
+    #dddddd,
+    #ffffff
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
 .window {
   margin-top: 40px;
   min-width: 85vw;
