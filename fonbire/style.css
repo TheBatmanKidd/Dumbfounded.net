@@ -23,11 +23,11 @@ hr {
 .concession-stand {
   margin-left: auto;
   margin-right: auto;
-  margin-top: -20px;
+  margin-top: -10px;
   width: 42vw;
   max-width: 600px;
-  min-height: 500px;
-  max-height: 700px;
+  min-height: 600px;
+  max-height: 800px;
   background: linear-gradient(
     to bottom,
     #ff0000 0%,
@@ -45,8 +45,8 @@ hr {
 @media (max-width: 600px) {
   .concession-stand {
     width: 90vw;
-    min-height: 500px;
-    max-height: 700px;
+    min-height: 600px;
+    max-height: 800px;
     margin-top: -10px;
   }
 }
