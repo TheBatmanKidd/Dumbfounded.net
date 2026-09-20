@@ -4,7 +4,11 @@ const urlParams = currentUrl.searchParams;
 document.addEventListener("DOMContentLoaded", () => {
     const element = document.getElementById('counter');
     if (element) {
-        element.innerHTML = `<img src="https://hitwebcounter.com" title="Counter" Alt="Visit Counter" border="0" />`;
+        element.innerHTML = `
+            <a href="https://www.hitwebcounter.com/work-hours-calculator" target="_blank" rel="noopener" title="Counter Hours">
+                <img src="https://hitwebcounter.com" alt="Counter Hours" decoding="async" style="border:0; max-width:100%; height:auto; vertical-align: middle; margin-left: 10px;" />
+            </a>
+        `;
     }
 });
 
