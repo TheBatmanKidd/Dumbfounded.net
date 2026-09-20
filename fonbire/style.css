@@ -26,7 +26,8 @@ hr {
   margin-top: -20px;
   width: 42vw;
   max-width: 600px;
-  min-height: 85vh;
+  min-height: 500px;
+  max-height: 700px;
   background: linear-gradient(
     to bottom,
     #ff0000 0%,
@@ -44,10 +45,12 @@ hr {
 @media (max-width: 600px) {
   .concession-stand {
     width: 90vw;
-    min-height: 70vh;
+    min-height: 500px;
+    max-height: 700px;
     margin-top: -10px;
   }
 }
+
 .concession-stand:hover {
   transform: scale(1.015);
 }
