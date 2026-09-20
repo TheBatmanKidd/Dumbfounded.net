@@ -22,7 +22,8 @@ hr {
 
 .concession-stand {
   margin-top: 40px;
-  min-width: 21vw;
+  min-width: 42vw;
+  width: 42vw;
   min-height: 85vh;
   background: linear-gradient(
     to bottom,
