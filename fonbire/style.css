@@ -7,10 +7,11 @@
 }
 
 hr {
-  margin-top: -90px;
   border: none;
   height: 4px;
   background-color: white;
+  margin-top: 15px;
+  margin-bottom: 0;
 }
 
 .g-recaptcha {
