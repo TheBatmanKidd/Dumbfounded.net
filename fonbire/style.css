@@ -31,8 +31,8 @@ hr {
   max-height: 800px;
   background: linear-gradient(
     to bottom,
-    #f7b02c 0%,
-    #361f25 100%
+    #f7b02c 50%,
+    #361f25 50%
   );
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
