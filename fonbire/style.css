@@ -6,6 +6,16 @@
   font-display: swap;
 }
 
+option {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 48px;
+  font-family: "CSMS", sans-serif;
+  font-weight: 700;
+  color: black;
+  display: block;
+}
+
 label {
   text-align: center;
   font-size: 36px;
@@ -13,7 +23,6 @@ label {
   font-weight: 600;
   color: black;
   display: block;
-  transition: transform 0.2s ease;
 }
 
 hr {
