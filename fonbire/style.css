@@ -6,6 +6,16 @@
   font-display: swap;
 }
 
+label {
+  text-align: center;
+  font-size: 36px;
+  font-family: "CSMS", sans-serif;
+  font-weight: 600;
+  color: black;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
 hr {
   border: none;
   height: 4px;
