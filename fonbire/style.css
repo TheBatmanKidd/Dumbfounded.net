@@ -6,6 +6,25 @@
   font-display: swap;
 }
 
+.sbtn {
+  background: linear-gradient(to top, blue, skyblue);
+  color: white;
+  height: 75px;
+  font-size: 36px;
+  font-family: 'CSMS', 'CSMS', cursive;
+  border-radius: 32px;
+  padding: 0 36px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.sbtn:hover {
+  transform: scale(1.05);
+}
+
+.sbtn:active {
+  transform: scale(0.95);
+}
+
 select {
   margin-left: auto;
   margin-right: auto;
@@ -207,21 +226,21 @@ h2:hover {
   transform: scale(1.0125);
 }
 
-.btn {
+button {
   background: linear-gradient(to top, blue, skyblue);
   color: white;
   height: 75px;
   font-size: 36px;
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-family: 'CSMS', 'CSMS', cursive;
   border-radius: 32px;
   padding: 0 36px;
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.btn:hover {
+button:hover {
   transform: scale(1.05);
 }
 
-.btn:active {
+button:active {
   transform: scale(0.95);
 }
