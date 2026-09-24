@@ -7,8 +7,6 @@
 }
 
 .sbtn {
-  margin-left: auto;
-  margin-right: auto;
   background: linear-gradient(to top, blue, skyblue);
   color: white;
   height: 75px;
