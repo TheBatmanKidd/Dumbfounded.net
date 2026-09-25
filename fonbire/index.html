@@ -28,38 +28,40 @@
         <div class="concession-stand">
           <h2 style="color: white; font-size: 48px;"><i>Get what you want, I don't care.™</i></h2>
           <hr>
-          <div class="g-recaptcha" data-sitekey="6LeSG8YtAAAAAP7d2hiByFdlN3F5V6WXeOluBiMp" data-callback="revealStuff" id="captcha"></div>
-          <div id="stuff" style="display: none;">
-            <div>
-              <label for="food">Choose a food</label>
-              <select name="food" id="food">
-                <option value="food1">1</option>
-                <option value="food2">2</option>
-                <option value="food3">3</option>
-              </select>
+          <form action="https://formspree.io/f/xeaozpvl" method="POST">
+            <div class="g-recaptcha" data-sitekey="6LeSG8YtAAAAAP7d2hiByFdlN3F5V6WXeOluBiMp" data-callback="revealStuff" id="captcha"></div>
+            <div id="stuff" style="display: none;">
+              <div>
+                <label for="food">Choose a food</label>
+                <select name="food" id="food">
+                  <option value="food1">1</option>
+                  <option value="food2">2</option>
+                  <option value="food3">3</option>
+                </select>
+              </div>
+              <div>
+                <label for="snack">Choose a snack</label>
+                <select name="snack" id="snack">
+                  <option value="snack1">1</option>
+                  <option value="snack2">2</option>
+                  <option value="snack3">3</option>
+                </select>
+              </div>
+              <div>
+                <label for="drink">Choose a drink</label>
+                <select name="drink" id="drink">
+                  <option value="drink1">1</option>
+                  <option value="drink2">2</option>
+                  <option value="drink3">3</option>
+                </select>
+              </div>
+              <div>
+                <input id="name" name="name" placeholder="Enter your name..." style="scale(1.5); position: relative; left: 50%; transform: translateX(-50%); margin: 20px 0;"></input>
+                <div class="g-recaptcha" data-sitekey="6LeSG8YtAAAAAP7d2hiByFdlN3F5V6WXeOluBiMp" data-callback="revealSubmit" id="captcha2"></div>
+                <button id="submit" class="sbtn">Submit</button>
+              </div>
             </div>
-            <div>
-              <label for="snack">Choose a snack</label>
-              <select name="snack" id="snack">
-                <option value="snack1">1</option>
-                <option value="snack2">2</option>
-                <option value="snack3">3</option>
-              </select>
-            </div>
-            <div>
-              <label for="drink">Choose a drink</label>
-              <select name="drink" id="drink">
-                <option value="drink1">1</option>
-                <option value="drink2">2</option>
-                <option value="drink3">3</option>
-              </select>
-            </div>
-            <div>
-              <input id="name" name="name" placeholder="Enter your name..." style="scale(1.5); position: relative; left: 50%; transform: translateX(-50%); margin: 20px 0;"></input>
-              <div class="g-recaptcha" data-sitekey="6LeSG8YtAAAAAP7d2hiByFdlN3F5V6WXeOluBiMp" data-callback="revealSubmit" id="captcha2"></div>
-              <button id="submit" class="sbtn">Submit</button>
-            </div>
-          </div>
+          </form>
         </div>
         <hr>
       </div>
