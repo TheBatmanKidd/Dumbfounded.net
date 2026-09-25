@@ -1,3 +1,5 @@
+document.getElementById('submit').style.display = "none"
+
 function revealStuff(response) {
     if (response.length > 0) {
         document.getElementById('stuff').style.display = 'block';
