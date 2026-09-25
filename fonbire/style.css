@@ -7,8 +7,10 @@
 }
 
 .sbtn {
-  display: block;
-  margin: 20px auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 20px 0;
   background: linear-gradient(to top, blue, skyblue);
   color: white;
   height: 75px;
@@ -20,11 +22,11 @@
 }
 
 .sbtn:hover {
-  transform: scale(1.05);
+  transform: translateX(-50%) scale(1.05);
 }
 
 .sbtn:active {
-  transform: scale(0.95);
+  transform: translateX(-50%) scale(0.95);
 }
 
 select {
