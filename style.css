@@ -238,7 +238,7 @@ h2:hover {
   transform: scale(1.0125);
 }
 
-.btn {
+button {
   background: linear-gradient(
     to top,
     blue, 
@@ -253,10 +253,10 @@ h2:hover {
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.btn:hover {
+button:hover {
   transform: scale(1.05);
 }
 
-.btn:active {
+button:active {
   transform: scale(0.95);
 }
