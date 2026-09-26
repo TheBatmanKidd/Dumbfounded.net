@@ -24,11 +24,19 @@ html, body {
 .main-link {
   text-decoration: underline;
   margin-right: 20px;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .hidden-links {
-  display: none;
+  display: flex;
   align-items: center;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: max-width 0.5s ease, opacity 0.4s ease;
+  transition-delay: 0.1s;
 }
 
 .hidden-links a {
@@ -37,9 +45,10 @@ html, body {
 }
 
 .dropdown-wrapper:hover .hidden-links {
-  display: flex;
+  max-width: 600px;
+  opacity: 1;
+  transition-delay: 0.2s;
 }
-
 
 #toggleTitleButton {
   position: fixed;
