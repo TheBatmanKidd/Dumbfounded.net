@@ -40,12 +40,12 @@ html, body {
     #5050ff,
     #3030aa
   );
-  border: 1px solid #cccccc;
-  padding: 15px;
+  border: 0 solid #cccccc;
+  padding: 0 15px;
   max-height: 0;
-  opacity: 100;
+  opacity: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease, opacity 0.4s ease;
+  transition: max-height 0.5s ease, opacity 0.4s ease, padding 0.5s ease;
   transition-delay: 0.1s;
 }
 
@@ -58,6 +58,8 @@ html, body {
 .dropdown-wrapper:hover .hidden-links {
   max-height: 500px;
   opacity: 1;
+  border: 1px solid #cccccc;
+  padding: 15px;
   transition-delay: 0.2s;
 }
 
