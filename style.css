@@ -16,6 +16,31 @@ html, body {
   flex: 1;
 }
 
+.dropdown-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.main-link {
+  text-decoration: underline;
+  margin-right: 20px;
+}
+
+.hidden-links {
+  display: none;
+  align-items: center;
+}
+
+.hidden-links a {
+  text-decoration: underline;
+  margin-right: 20px;
+}
+
+.dropdown-wrapper:hover .hidden-links {
+  display: flex;
+}
+
+
 #toggleTitleButton {
   position: fixed;
   z-index: 99999;
@@ -129,7 +154,7 @@ a {
   color: #000080;
   text-decoration: none;
   font-family: 'CSMS', cursive;
-  font-size: 14px;
+  font-size: 24px;
   line-height: 1;
   padding: 2px 0;
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
