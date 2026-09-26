@@ -37,8 +37,8 @@ html, body {
   gap: 10px 20px;
   background: linear-gradient(
     to bottom,
-    #5050ff,
-    #3030aa
+    skyblue,
+    blue
   );
   border-radius: 12px;
   padding: 0 15px;
