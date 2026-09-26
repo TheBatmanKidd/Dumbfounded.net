@@ -65,7 +65,7 @@ window.history.replaceState(
   currentUrl.href
 );
 
-const CHECK_INTERVAL = 1000;
+const CHECK_INTERVAL = 1500;
 const FILES_TO_CHECK = ['/index.html', '/style.css', '/index.js'];
 
 let initialFileFingerprints = {};
