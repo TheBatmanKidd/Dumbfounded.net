@@ -41,7 +41,11 @@ footer {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 28px;
   color: red;
-  background: linear-gradient(to bottom, #5050ff, #3030aa);
+  background: linear-gradient(
+    to bottom,
+    #5050ff,
+    #3030aa
+  );
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -61,7 +65,11 @@ footer {
 .window {
   margin-top: 0;
   min-width: 98vw;
-  background: linear-gradient(to bottom, #5050ff, #3030aa);
+  background: linear-gradient(
+    to bottom,
+    #5050ff,
+    #3030aa
+  );
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 32px;
@@ -137,7 +145,11 @@ a {
   inset: 0;
   min-height: 100vh;
   min-width: 100vw;
-  background: linear-gradient(to bottom, #50ff50, #30aa30);
+  background: linear-gradient(
+    to bottom,
+    #50ff50,
+    #100010
+  );
   display: flex;
   flex-direction: column;
   align-items: center;
