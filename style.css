@@ -202,10 +202,10 @@ h2:hover {
 .btn {
   background: linear-gradient(to top, blue, skyblue);
   color: white;
-  height: 75px;
-  font-size: 36px;
+  height: 68px;
+  font-size: 24px;
   font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-  border-radius: 32px;
+  border-radius: 26px;
   padding: 0 36px;
   transition: transform 0.2s ease, background 0.2s ease;
 }
