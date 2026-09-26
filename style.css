@@ -206,11 +206,11 @@ h2:hover {
     skyblue
   );
   color: white;
-  height: 62px;
+  height: 54px;
   font-size: 24px;
   font-family: 'Comic Sans MS', 'Comic Sans', cursive;
   border-radius: 26px;
-  padding: 0 24px;
+  padding: 0 16px;
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
