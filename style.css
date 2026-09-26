@@ -200,13 +200,17 @@ h2:hover {
 }
 
 .btn {
-  background: linear-gradient(to top, blue, skyblue);
+  background: linear-gradient(
+    to top,
+    blue, 
+    skyblue
+  );
   color: white;
   height: 62px;
   font-size: 24px;
   font-family: 'Comic Sans MS', 'Comic Sans', cursive;
   border-radius: 26px;
-  padding: 0 36px;
+  padding: 0 24px;
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
