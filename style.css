@@ -45,7 +45,7 @@ html, body {
 }
 
 .dropdown-wrapper:hover .hidden-links {
-  max-width: 600px;
+  max-width: 1000px;
   opacity: 1;
   transition-delay: 0.2s;
 }
