@@ -37,8 +37,11 @@ html, body {
   gap: 10px 20px;
   background: linear-gradient(
     to bottom,
-    skyblue,
-    blue
+    #013e6a,
+    #43d1ff,
+    #013e6a,
+    #419ad6,
+    #01186a
   );
   border-radius: 12px;
   padding: 0 15px;
