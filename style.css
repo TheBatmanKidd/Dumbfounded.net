@@ -125,6 +125,16 @@ footer {
   transform: scale(1.015);
 }
 
+.products-window {
+  width: 49vw !important;
+  min-width: 0 !important;
+  max-width: 49vw !important;
+  margin-top: 20px;
+  box-sizing: border-box;
+  flex: 0 0 49vw;
+  align-self: flex-start;
+}
+
 @keyframes fadeSlideUp {
   from {
     opacity: 0;
