@@ -129,10 +129,9 @@ footer {
   width: 49vw !important;
   min-width: 0 !important;
   max-width: 49vw !important;
-  margin-top: 20px;
+  margin: 20px auto 0 auto !important;
   box-sizing: border-box;
-  flex: 0 0 49vw;
-  align-self: flex-start;
+  flex: none;
 }
 
 @keyframes fadeSlideUp {
