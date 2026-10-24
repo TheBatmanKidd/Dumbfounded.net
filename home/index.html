@@ -6,12 +6,20 @@
     <title>Dumbfounded™</title>
     <script>
         const currentUrl = new URL(window.location.href);
-
+        
         if (currentUrl.pathname === '/home') {
             currentUrl.search = '';
             window.history.replaceState({ path: currentUrl.href }, '', currentUrl.href);
         } else {
             window.location.href = 'https://dumbfounded.net';
+        }
+        
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/sw.js')
+                .then(reg => console.log('sw work', reg.scope))
+                .catch(err => console.log('sw fail, ', err));
+            });
         }
     </script>
 </head>
