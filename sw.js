@@ -1,6 +1,17 @@
-const CACHE_NAME = 'dumbfounded-cache-v4';
+const CACHE_NAME = 'dumbfounded-cache-v1';
 
 self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll([
+        '/', 
+        '/index.html',
+        '/home'
+      ]).catch((err) => {
+        console.error(err);
+      });
+    })
+  );
   self.skipWaiting();
 });
 
@@ -16,7 +27,7 @@ self.addEventListener('fetch', (event) => {
       }
 
       return fetch(event.request).then((networkResponse) => {
-        if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
+        if (!networkResponse || networkResponse.status !== 200) {
           return networkResponse;
         }
 
@@ -27,7 +38,7 @@ self.addEventListener('fetch', (event) => {
 
         return networkResponse;
       }).catch(() => {
-        return caches.match('/index.html') || caches.match('/');
+        return caches.match('/home') || caches.match('/index.html') || caches.match('/');
       });
     })
   );
