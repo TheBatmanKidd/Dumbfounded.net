@@ -1,24 +1,6 @@
-const CACHE_NAME = 'dumbfounded-cache-v3';
-const ASSETS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/index.js',
-  '/DumbfoundedLogo2.png'
-];
+const CACHE_NAME = 'dumbfounded-cache-v4';
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return Promise.all(
-        ASSETS_TO_CACHE.map((asset) => {
-          return cache.add(asset).catch((err) => {
-            console.error(err);
-          });
-        })
-      );
-    })
-  );
   self.skipWaiting();
 });
 
@@ -29,8 +11,23 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
-      return cachedResponse || fetch(event.request).catch(() => {
-        return caches.match('/index.html');
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+
+      return fetch(event.request).then((networkResponse) => {
+        if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
+          return networkResponse;
+        }
+
+        const responseToCache = networkResponse.clone();
+        caches.open(CACHE_NAME).then((cache) => {
+          cache.put(event.request, responseToCache);
+        });
+
+        return networkResponse;
+      }).catch(() => {
+        return caches.match('/index.html') || caches.match('/');
       });
     })
   );
