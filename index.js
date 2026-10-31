@@ -41,7 +41,7 @@ if (urlParams.get('utm_source') === 'chatgpt.com') {
 
 /* if (currentUrl.pathname !== '/home') {
    currentUrl.pathname = '/home';
-*/ }
+} */
 
 if (window.location.protocol === 'https:') {
   console.log("https i see");
@@ -57,13 +57,13 @@ if (window.location.protocol === 'https:') {
 }
 
 
-currentUrl.search = '';
+/* currentUrl.search = '';
 
 window.history.replaceState(
   { path: currentUrl.href },
   '',
   currentUrl.href
-);
+); */
 
 const CHECK_INTERVAL = 1500;
 const FILES_TO_CHECK = ['/index.html', '/style.css', '/index.js'];
