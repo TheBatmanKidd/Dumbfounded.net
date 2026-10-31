@@ -39,9 +39,9 @@ if (urlParams.get('utm_source') === 'chatgpt.com') {
   document.title = "Dumbfounded™ - ChatGPT, Really?";
 }
 
-if (currentUrl.pathname !== '/home') {
-  currentUrl.pathname = '/home';
-}
+/* if (currentUrl.pathname !== '/home') {
+   currentUrl.pathname = '/home';
+*/ }
 
 if (window.location.protocol === 'https:') {
   console.log("https i see");
