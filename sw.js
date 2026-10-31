@@ -1,7 +1,6 @@
 const CACHE_NAME = "dumbfounded-off-v1";
 const OFFLINE_URLS = [
   "/",
-  "/home",
   "/index.html",
   "/home/",
   "/home/index.html",
