@@ -39,10 +39,6 @@ if (urlParams.get('utm_source') === 'chatgpt.com') {
   document.title = "Dumbfounded™ - ChatGPT, Really?";
 }
 
-/* if (currentUrl.pathname !== '/home') {
-   currentUrl.pathname = '/home';
-} */
-
 if (window.location.protocol === 'https:') {
   console.log("https i see");
 } else if (window.location.protocol === 'http:') {
@@ -55,15 +51,6 @@ if (window.location.protocol === 'https:') {
     console.error("couldn't find the target nav element.");
   }
 }
-
-
-/* currentUrl.search = '';
-
-window.history.replaceState(
-  { path: currentUrl.href },
-  '',
-  currentUrl.href
-); */
 
 const CHECK_INTERVAL = 1500;
 const FILES_TO_CHECK = ['/index.html', '/style.css', '/index.js'];
