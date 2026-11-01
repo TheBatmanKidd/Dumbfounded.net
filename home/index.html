@@ -14,11 +14,7 @@
         }
 
         const currentUrl = new URL(window.location.href);
-
-        if (currentUrl.pathname === '/home' && currentUrl.search) {
-            currentUrl.search = '';
-            window.history.replaceState({ path: currentUrl.href }, '', currentUrl.href);
-        }
+        window.history.replaceState({ path: currentUrl.href }, '', currentUrl.href);
     </script>
 </head>
 <body>
