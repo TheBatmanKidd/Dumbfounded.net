@@ -13,6 +13,14 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Ultra';
+  src: url('fonts/Ultra-Regular.tff') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
   
 html, body {
   height: 100%;
