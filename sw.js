@@ -1,4 +1,4 @@
-const CACHE_NAME = "dumbfounded-off-v1";
+const CACHE_NAME = "dumbfounded-off-v2";
 const OFFLINE_URLS = [
   "/",
   "/index.html",
