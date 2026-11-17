@@ -1,6 +1,7 @@
-const CACHE_NAME = "dumbfounded-off-v2";
+const CACHE_NAME = "dumbfounded-off-v3";
 const OFFLINE_URLS = [
-  "/",
+  "/images/DumbfoundedLogo.png",
+  "/images/"
   "/index.html",
   "/home/",
   "/home/index.html",
