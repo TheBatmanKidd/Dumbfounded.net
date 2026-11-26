@@ -288,3 +288,172 @@ button:hover {
 button:active {
   transform: scale(0.95);
 }
+
+@media screen and (max-width: 768px) {
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  .background {
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+    padding: 12px;
+    overflow-x: hidden;
+  }
+
+  .window {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    border-radius: 20px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .products-window {
+    width: 95% !important;
+    min-width: 0 !important;
+    max-width: 95% !important;
+    margin: 15px auto !important;
+  }
+
+  h1 {
+    font-size: clamp(38px, 10vw, 64px);
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  h2 {
+    font-size: clamp(22px, 5.5vw, 30px);
+  }
+
+  .nav_menu {
+    position: relative;
+    width: 100%;
+    padding: 12px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+  }
+
+  .nav_menu a {
+    font-size: clamp(15px, 3.5vw, 19px);
+    white-space: normal;
+  }
+
+  a {
+    font-size: 19px;
+    overflow-wrap: anywhere;
+  }
+
+  button {
+    max-width: 100%;
+    min-height: 48px;
+    height: auto;
+    padding: 10px 16px;
+    font-size: 18px;
+  }
+  
+  .top-left {
+    width: min(300px, 85vw);
+    height: 80px;
+    font-size: 19px;
+  }
+
+  .hidden-links {
+    max-width: 90vw;
+    grid-auto-flow: row;
+    grid-template-rows: none;
+    gap: 12px;
+  }
+
+  .hidden-links a {
+    white-space: normal;
+  }
+
+  .dropdown-wrapper:hover .hidden-links,
+  .dropdown-wrapper:focus-within .hidden-links {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  .fade_slide_up {
+    gap: 25px;
+    padding-top: 20px;
+  }
+
+  footer {
+    padding: 15px 10px;
+  }
+
+  .window:hover,
+  h1:hover,
+  h2:hover,
+  button:hover,
+  .nav_menu a:hover {
+    transform: none;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+
+  .nav_menu {
+    gap: 8px;
+  }
+
+  .nav_menu a {
+    font-size: 15px;
+  }
+
+  .window {
+    border-radius: 14px;
+  }
+
+  .products-window {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .fade_slide_up {
+    gap: 18px;
+  }
+
+  button {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1100px) {
+
+  h1 {
+    font-size: 85px;
+  }
+
+  .products-window {
+    width: 70vw !important;
+    max-width: 70vw !important;
+  }
+
+  .nav_menu a {
+    font-size: 21px;
+  }
+
+}
