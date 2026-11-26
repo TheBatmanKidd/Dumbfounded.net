@@ -11,11 +11,19 @@
     <script src="index.js" defer></script>
     <meta name="description" content="Official DumbFounded™ Website">
     <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js')
-            .then(reg => console.log('sw work', reg.scope))
-            .catch(err => console.log('sw fail, ', err));
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", async () => {
+          try {
+            const registration = await navigator.serviceWorker.register("/sw.js", {
+              scope: "/",
+              updateViaCache: "none"
+            });
+            console.log("DumbFounded™ Offline Registered.");
+            await navigator.serviceWorker.ready;
+            console.log("DumbFounded™ Offline");
+          } catch (error) {
+            console.error("DumbFounded™ Offline system failed:", error);
+          }
         });
       }
     </script>
