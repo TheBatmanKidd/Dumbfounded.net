@@ -238,8 +238,8 @@ h1 {
   font-family: 'Bowlby One', sans-serif;
   background: linear-gradient(
     to top,
-    #7a0000,
-    #dd0000
+    #aaaaaa,
+    #ffffff
   );
   background-clip: text;
   -webkit-background-clip: text;
