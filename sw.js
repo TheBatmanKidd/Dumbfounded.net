@@ -1,4 +1,4 @@
-const CACHE_NAME = "dumbfounded-off-v8";
+const CACHE_NAME = "dumbfounded-off-v9";
 const CACHE_PREFIX = "dumbfounded-off-";
 
 const CORE_URLS = [
