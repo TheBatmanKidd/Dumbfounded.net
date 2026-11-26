@@ -1,4 +1,4 @@
-const CACHE_NAME = "dumbfounded-off-v5";
+const CACHE_NAME = "dumbfounded-off-v6";
 const OFFLINE_URLS = [
   "/images/DumbfoundedLogo.png",
   "/images/",
@@ -9,7 +9,7 @@ const OFFLINE_URLS = [
   "/search/",
   "/fonts/",
   "/style.css",
-  "/script.js"
+  "/index.js"
 ];
 
 self.addEventListener("install", event => {
