@@ -1,4 +1,3 @@
-
 const CACHE_NAME = "dumbfounded-off-v8";
 const CACHE_PREFIX = "dumbfounded-off-";
 
