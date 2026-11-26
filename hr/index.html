@@ -3,5 +3,15 @@
   <head>
     <meta charset="UTF-8">
     <title>DumbFounded H.R.™</title>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('sw work', reg.scope))
+            document.title("DumbFounded™ Offline Website");
+            .catch(err => console.log('sw fail, ', err));
+        });
+      }
+    </script>
   </head>
 </html>
