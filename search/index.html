@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Search Thingies | Dumbfounded™ Website</title>
+    <title>Search Thingies | DumbFounded™ Website</title>
     <link rel="icon" type="image/png" href="/DumbfoundedLogo2.png">
   </head>
   <body>
     <input type="text" id="searchInput" placeholder="Search any word...">
     <button id="searchButton">Search</button>
 
-    <h2>Dumbfounded™ Results:</h2>
+    <h2>DumbFounded™ Results:</h2>
     <div id="resultsContainer"></div>
 
     <script>
@@ -141,6 +141,16 @@
 
         window.addEventListener('DOMContentLoaded', updateUIFromURL);
         window.addEventListener('popstate', updateUIFromURL);
+    </script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('sw work', reg.scope))
+            document.title("DumbFounded™ Offline Website");
+            .catch(err => console.log('sw fail, ', err));
+        });
+      }
     </script>
   </body>
 </html>
