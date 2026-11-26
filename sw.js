@@ -3,8 +3,11 @@ const OFFLINE_URLS = [
   "/images/DumbfoundedLogo.png",
   "/images/"
   "/index.html",
-  "/home/",
-  "/home/index.html",
+  "/sign-up/",
+  "/hr/",
+  "/dfa/",
+  "/search/",
+  "/fonts/",
   "/style.css",
   "/script.js"
 ];
